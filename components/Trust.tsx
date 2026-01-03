@@ -8,12 +8,12 @@ const Trust: React.FC = () => {
         <div className="lg:w-1/2">
           <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden relative bg-neutral-100 shadow-sm">
             <img 
-              src="https://images.unsplash.com/photo-1595846519845-68e298c2edd8?q=80&w=2787&auto=format&fit=crop" 
-              alt="Construction Detail" 
+              src="https://images.unsplash.com/photo-1542013936693-884638332954?q=80&w=2787&auto=format&fit=crop" 
+              alt="Professional Plumbing Tools" 
               className="w-full h-full object-cover grayscale opacity-80 hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute bottom-6 left-6 backdrop-blur px-4 py-2 rounded-md border bg-white/90 border-white/20">
-              <p className="text-xs font-medium text-neutral-900 font-dm-sans">Dallas, Texas</p>
+              <p className="text-xs font-medium text-neutral-900 font-dm-sans">Anne Arundel County, MD</p>
             </div>
           </div>
         </div>
@@ -23,10 +23,10 @@ const Trust: React.FC = () => {
           </h2>
           <div className="space-y-6 text-sm md:text-base leading-relaxed max-w-lg text-neutral-600 font-dm-sans">
             <p>
-              In an industry often plagued by uncertainty, Matos Home Improvements stands as a pillar of reliability. We believe that how we treat our clients is just as important as the quality of our construction.
+              In an industry often plagued by uncertainty, <strong className="text-neutral-900">Your Ideal Home</strong> stands as a pillar of reliability. Robert believes that how we treat our neighbors is just as important as the quality of our plumbing.
             </p>
             <p>
-              We are a Dallas-based company understanding the specific needs of local homeowners, property managers, and businesses. When you hire Matos, you hire peace of mind.
+              We are an Anne Arundel-based, family-owned company understanding the specific needs of local homeowners and businesses. When you hire Robert, you hire peace of mind.
             </p>
           </div>
           <div className="mt-10 flex flex-wrap gap-6">

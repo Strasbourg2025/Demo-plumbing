@@ -5,24 +5,24 @@ import { ServiceItem } from '../types';
 const serviceList: ServiceItem[] = [
   {
     id: 1,
-    title: "Interior Transformations",
-    description: "Complete remodels of kitchens, bathrooms, and living spaces. We handle structural changes, high-end finishes, and lighting design to modernize your interior environment.",
-    image: "https://images.unsplash.com/photo-1640906152676-dace6710d24b?w=2160&q=80",
-    features: ["Kitchens & Baths", "Flooring & Tile", "Custom Cabinetry"]
+    title: "Residential Plumbing",
+    description: "Complete care for kitchens, bathrooms, and laundry rooms. We handle everything from high-end fixture installations to leak detection and pipe repair.",
+    image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=2160&q=80",
+    features: ["Water Heaters", "Faucets & Sinks", "Clogged Drains"]
   },
   {
     id: 2,
-    title: "Exterior Improvements",
-    description: "Enhancing curb appeal and structural integrity. From siding and roofing to custom patios and outdoor living areas that withstand the Texas climate.",
-    image: "https://images.unsplash.com/photo-1629946832022-c327f74956e0?w=2160&q=80",
-    features: ["Siding & Roofing", "Patios & Decks", "Window Replacement"]
+    title: "System Upgrades",
+    description: "Modernizing your home’s efficiency with tankless water heaters, whole-home filtration systems, and preventative maintenance plans.",
+    image: "https://images.unsplash.com/photo-1621905252507-b354bcadcabc?w=2160&q=80",
+    features: ["Tankless Units", "Water Filtration", "Smart Leak Detection"]
   },
   {
     id: 3,
-    title: "Design & Systems",
-    description: "The unseen backbone of your home. We manage architectural planning, permitting, and the modernization of electrical, plumbing, and HVAC systems.",
-    image: "https://images.unsplash.com/photo-1724525647065-f948fc102e68?w=2160&q=80",
-    features: ["3D Rendering", "Electrical & Plumbing", "Permitting"]
+    title: "Emergency Repairs",
+    description: "Rapid response for the issues that can't wait. We protect your home from water damage with 24/7 reliability and expert diagnostics.",
+    image: "https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=2160&q=80",
+    features: ["Burst Pipe Repair", "Sewer Line Backups", "Emergency Shut-offs"]
   }
 ];
 
@@ -35,7 +35,6 @@ const Services: React.FC = () => {
         <span className="text-xs font-semibold tracking-widest text-neutral-500 uppercase block mb-20 font-dm-sans">Expertise</span>
         
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 relative items-start">
-          {/* Left Column: Sticky Images (Desktop) */}
           <div className="w-full lg:w-5/12 lg:sticky lg:top-32 h-[300px] lg:h-[500px] rounded-2xl overflow-hidden shadow-sm hidden lg:block bg-neutral-100">
             <div className="relative w-full h-full">
               {serviceList.map((service) => (
@@ -50,7 +49,6 @@ const Services: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: Accordion List */}
           <div className="w-full lg:w-7/12 flex flex-col">
             {serviceList.map((service) => (
               <div 
@@ -75,7 +73,6 @@ const Services: React.FC = () => {
                     <div className={`grid transition-[grid-template-rows] duration-500 ease-out ${activeId === service.id ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
                       <div className="overflow-hidden">
                         <div className={`pt-2 pb-4 transition-opacity duration-500 delay-100 ${activeId === service.id ? 'opacity-100' : 'opacity-0'}`}>
-                          {/* Mobile Image (Hidden on Desktop) */}
                           <div className="lg:hidden w-full h-64 rounded-xl overflow-hidden mb-6 relative bg-neutral-100">
                             <img src={service.image} alt={service.title} className="absolute inset-0 w-full h-full object-cover" />
                           </div>
@@ -84,7 +81,7 @@ const Services: React.FC = () => {
                           </p>
                           <ul className="space-y-2">
                             {service.features.map((feature, fIdx) => (
-                              <li key={fIdx} className="flex items-center gap-3 text-sm text-neutral-500 font-dm-sans">
+                              <li key={fIdx} className="flex items-center gap-3 text-sm text-neutral-500 font-dm-sans uppercase tracking-widest">
                                 <span className="w-1.5 h-1.5 rounded-full bg-neutral-400"></span> {feature}
                               </li>
                             ))}

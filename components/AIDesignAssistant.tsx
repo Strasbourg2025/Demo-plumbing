@@ -6,7 +6,7 @@ import { Message } from '../types';
 const AIDesignAssistant: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
-    { role: 'model', text: 'Hello! I am your Matos Design Assistant. How can I help you plan your home transformation today?' }
+    { role: 'model', text: 'Hello! I am your Plumbing & System Assistant. How can I help you plan your home systems or address a plumbing need today?' }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -33,7 +33,6 @@ const AIDesignAssistant: React.FC = () => {
 
   return (
     <div className="fixed bottom-6 right-6 z-[60]">
-      {/* Toggle Button */}
       <button 
         onClick={() => setIsOpen(!isOpen)}
         className="w-14 h-14 rounded-full bg-neutral-900 text-white flex items-center justify-center shadow-xl hover:scale-110 transition-transform ring-4 ring-white"
@@ -45,18 +44,16 @@ const AIDesignAssistant: React.FC = () => {
         )}
       </button>
 
-      {/* Chat Window */}
       {isOpen && (
         <div className="absolute bottom-20 right-0 w-[350px] md:w-[400px] h-[500px] bg-white rounded-3xl shadow-2xl flex flex-col overflow-hidden border border-neutral-100">
-          {/* Header */}
           <div className="p-6 bg-neutral-900 text-white flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 8V4H8"></path><rect width="16" height="12" x="4" y="8" rx="2"></rect></svg>
               </div>
               <div>
-                <h4 className="text-sm font-semibold">Design Assistant</h4>
-                <p className="text-[10px] text-white/60">Powered by Matos AI</p>
+                <h4 className="text-sm font-semibold uppercase tracking-widest">Plumbing AI</h4>
+                <p className="text-[10px] text-white/60 uppercase tracking-widest">Robert's Digital Assistant</p>
               </div>
             </div>
             <button onClick={() => setIsOpen(false)} className="text-white/60 hover:text-white transition-colors">
@@ -64,11 +61,10 @@ const AIDesignAssistant: React.FC = () => {
             </button>
           </div>
 
-          {/* Messages */}
           <div ref={scrollRef} className="flex-1 overflow-y-auto p-4 space-y-4 bg-neutral-50/50">
             {messages.map((m, i) => (
               <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                <div className={`max-w-[80%] px-4 py-3 rounded-2xl text-sm leading-relaxed ${m.role === 'user' ? 'bg-neutral-900 text-white rounded-br-none' : 'bg-white border border-neutral-100 text-neutral-800 rounded-bl-none shadow-sm'}`}>
+                <div className={`max-w-[80%] px-4 py-3 rounded-2xl text-sm leading-relaxed font-dm-sans ${m.role === 'user' ? 'bg-neutral-900 text-white rounded-br-none' : 'bg-white border border-neutral-100 text-neutral-800 rounded-bl-none shadow-sm'}`}>
                   {m.text}
                 </div>
               </div>
@@ -84,7 +80,6 @@ const AIDesignAssistant: React.FC = () => {
             )}
           </div>
 
-          {/* Input */}
           <div className="p-4 bg-white border-t border-neutral-100">
             <div className="flex gap-2">
               <input 
@@ -92,8 +87,8 @@ const AIDesignAssistant: React.FC = () => {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && handleSend()}
-                placeholder="Ask about bathroom remodels..."
-                className="flex-1 bg-neutral-100 border-none rounded-full px-4 py-2 text-sm focus:ring-2 focus:ring-neutral-900 focus:outline-none"
+                placeholder="Ask about tankless upgrades..."
+                className="flex-1 bg-neutral-100 border-none rounded-full px-4 py-2 text-sm focus:ring-2 focus:ring-neutral-900 focus:outline-none font-dm-sans"
               />
               <button 
                 onClick={handleSend}
