@@ -1,0 +1,8 @@
+{
+  "name": "Copy of Matos Home Improvements",
+  "description": "A premium Dallas-based home remodeling platform featuring AI-powered design consultation and professional construction services.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
